@@ -17,7 +17,7 @@ class User(AbstractBaseUser):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100, blank=True)
     image = models.ImageField(upload_to='users/', blank=True, null=True)
-    phone = models.CharField(max_length=20, unique=True)  # yangi qo‘shildi
+    phone = models.CharField(max_length=20, unique=True, blank=True, null=True)
     is_active = models.BooleanField(default=True)
     is_verified = models.BooleanField(default=False)
 
@@ -38,3 +38,4 @@ class VerificationCode(models.Model):
         if not self.code:
             self.code = str(random.randint(10000, 99999))
         super().save(*args, **kwargs)
+
