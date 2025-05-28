@@ -9,6 +9,12 @@ class VerifyCodeSerializer(serializers.Serializer):
     code = serializers.CharField(max_length=5)
 
 class UserProfileSerializer(serializers.ModelSerializer):
+    phone = serializers.CharField(required=True)
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'image']
+        fields = ['first_name', 'last_name', 'phone', 'image']
+
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'first_name', 'last_name', 'phone', 'image']

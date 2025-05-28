@@ -2,7 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import User
-from .serializers import EmailSerializer, VerifyCodeSerializer, UserProfileSerializer
+from .serializers import EmailSerializer, VerifyCodeSerializer, UserProfileSerializer, ContactSerializer
 from .utils import send_verification_code, check_verification_code
 
 class SendCodeView(APIView):
@@ -39,3 +39,19 @@ class CompleteProfileView(APIView):
             return Response(serializer.errors, status=400)
         except User.DoesNotExist:
             return Response({"error": "Foydalanuvchi topilmadi"}, status=404)
+
+
+class CompleteProfileGetView(APIView):
+    def get(self, request, user_id):
+        try:
+            user = User.objects.get(id=user_id)
+            serializer = UserProfileSerializer(user)
+            return Response(serializer.data)
+        except User.DoesNotExist:
+            return Response({"error": "Foydalanuvchi topilmadi"}, status=404)
+
+class ContactsListView(APIView):
+    def get(self, request):
+        users = User.objects.filter(is_verified=True)
+        serializer = ContactSerializer(users, many=True)
+        return Response(serializer.data)

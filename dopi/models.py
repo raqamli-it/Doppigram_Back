@@ -17,6 +17,7 @@ class User(AbstractBaseUser):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100, blank=True)
     image = models.ImageField(upload_to='users/', blank=True, null=True)
+    phone = models.CharField(max_length=20, unique=True)  # yangi qo‘shildi
     is_active = models.BooleanField(default=True)
     is_verified = models.BooleanField(default=False)
 
@@ -26,6 +27,7 @@ class User(AbstractBaseUser):
 
     def __str__(self):
         return self.email
+
 
 class VerificationCode(models.Model):
     email = models.EmailField()
