@@ -142,6 +142,6 @@ EMAIL_HOST_PASSWORD = "bsfpvxmvznobrulo"
 DEFAULT_FROM_EMAIL = "Doppigram <hamidullanishonboyev9@gmail.com>"
 
 
-# DJWSBRIDGE_WS_PREFIX = "ws"
-# DJWSBRIDGE_WS_PATH = "chat"
+DJWSBRIDGE_WS_PREFIX = "ws"
+DJWSBRIDGE_WS_PATH = "chat"
 # DJWSBRIDGE_ALLOWED_TYPES = ["text", "message", "image", "signals"]
