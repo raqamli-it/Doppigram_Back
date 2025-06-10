@@ -11,7 +11,7 @@ services:
       - static_volume:/Dop/staticfiles
       - media_volume:/Dop/mediafiles
     ports:
-      - "8021:8000"
+      - "8019:8000"
     depends_on:
       - dop_db
       - redis
@@ -24,7 +24,7 @@ services:
       POSTGRES_USER: user_doppi
       POSTGRES_PASSWORD: password_doppi
     ports:
-      - "5436:5432"
+      - "5438:5439"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: always
@@ -33,7 +33,7 @@ services:
   redis:
     image: redis:alpine
     ports:
-      - "6372:6379"
+      - "6374:6379"
     volumes:
       - redis_data:/data
     restart: always
