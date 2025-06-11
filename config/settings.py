@@ -8,7 +8,7 @@ SECRET_KEY = 'django-insecure-mhj6($(7hrklb^9tbmd_akb2f6&v5hiet39l582+yh6=dwjvi-
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['doppigram.digitallaboratory.uz', '127.0.0.1', 'localhost', '95.46.96.138',]
+ALLOWED_HOSTS = ['telegram.digitallaboratory.uz', '127.0.0.1', 'localhost', '95.46.96.138',]
 
 INSTALLED_APPS = [
     "daphne",
