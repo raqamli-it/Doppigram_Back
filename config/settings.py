@@ -72,7 +72,7 @@ DATABASES = {
         'NAME': 'doppi',  # PostgreSQL bazasi nomi
         'USER': 'user_doppi',  # PostgreSQL foydalanuvchi nomi
         'PASSWORD': 'password_doppi',  # PostgreSQL paroli
-        'HOST': 'doppi_db',  # Docker Compose'dagi konteyner nomi
+        'HOST': 'dop_db',  # Docker Compose'dagi konteyner nomi
         'PORT': '5432',  # PostgreSQL uchun standart port
     }
 }
