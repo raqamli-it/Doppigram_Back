@@ -122,9 +122,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
+
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -152,5 +153,7 @@ DEFAULT_FROM_EMAIL = "Doppigram <hamidullanishonboyev9@gmail.com>"
 
 
 DJWSBRIDGE_WS_PREFIX = "ws"
+
+
 DJWSBRIDGE_WS_PATH = "chat"
 # DJWSBRIDGE_ALLOWED_TYPES = ["text", "message", "image", "signals"]
