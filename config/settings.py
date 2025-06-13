@@ -72,7 +72,7 @@ DATABASES = {
         'NAME': 'doppi',  # PostgreSQL bazasi nomi
         'USER': 'user_doppi',  # PostgreSQL foydalanuvchi nomi
         'PASSWORD': 'password_doppi',  # PostgreSQL paroli
-        'HOST': 'dop_db',  # Docker Compose'dagi konteyner nomi
+        'HOST': 'doppi_db',  # Docker Compose'dagi konteyner nomi
         'PORT': '5432',  # PostgreSQL uchun standart port
     }
 }
@@ -92,7 +92,7 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],
+            "hosts": [("redis", 6379)],
         },
     },
 }
@@ -122,10 +122,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
