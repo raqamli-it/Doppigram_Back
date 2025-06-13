@@ -8,8 +8,8 @@ services:
     command: sh -c "python manage.py migrate && daphne -b 0.0.0.0 -p 8000 config.asgi:application"
     volumes:
       - .:/Dop
-      - static_volume:/Dop/staticfiles
-      - media_volume:/Dop/mediafiles
+      - ./data/static:/Dop/staticfiles  # static fayllarni real papkaga chiqarish
+      - ./data/media:/Dop/mediafiles    # media fayllarni ham
     ports:
       - "8019:8000"
     depends_on:
